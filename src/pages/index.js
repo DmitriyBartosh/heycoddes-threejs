@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import House from "../components/house";
+import House from "components/house";
 
-import MetaTag from "../components/metaTag";
+import MetaTag from "components/metaTag";
 
 const IndexPage = () => {
   return <House />;

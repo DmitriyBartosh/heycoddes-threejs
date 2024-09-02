@@ -1,12 +1,13 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 
+import { steps } from "./stepsVariants";
+
 import * as THREE from "three";
 
-export function Model(props) {
+export function Model({ presentation }) {
   const { nodes } = useGLTF("models/house.gltf");
   const [
     textureEarth,
@@ -134,16 +135,14 @@ export function Model(props) {
     map: textureWindows,
   });
 
-  const { camera } = useThree();
-
-  console.log(camera);
+  console.log(steps[presentation.step - 1]);
 
   return (
     <motion.group
-      initial={{ z: -4 }}
-      animate={{
-        scale: props.presentation ? 0.9 : 1.5,
-      }}
+      variants={steps[presentation.step]}
+      initial={false}
+      animate="animate"
+      transition={{ duration: 1, ease: [0.28, 0.41, 0.12, 1] }}
     >
       <group
         name="Window_Group003"

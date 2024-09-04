@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 
 import { steps } from "./stepsVariants";
@@ -134,8 +133,6 @@ export function Model({ presentation }) {
   const WindowsMaterial = new THREE.MeshBasicMaterial({
     map: textureWindows,
   });
-
-  console.log(steps[presentation.step - 1]);
 
   return (
     <motion.group

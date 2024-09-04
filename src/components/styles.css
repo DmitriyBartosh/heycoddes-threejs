@@ -1,18 +1,15 @@
-canvas {
-    width: 100%;
-    height: 100%;
-}
-
 .swiper {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
+    background: #fff;
+
     /* Center slide text vertically */
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }

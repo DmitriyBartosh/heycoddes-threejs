@@ -16,7 +16,7 @@ export default function House() {
     step: 0,
   });
   const cameraControlsRef = useRef();
-
+  console.log(Math.PI / 2);
   function switchToPresentation() {
     setPresentation({ status: true, step: 0 });
     cameraControlsRef.current?.reset(true);
@@ -34,34 +34,45 @@ export default function House() {
           <Model presentation={presentation} />
           <CameraControls
             ref={cameraControlsRef}
-            minDistance={8}
+            minDistance={10}
             maxDistance={30}
+            minPolarAngle={0}
+            maxPolarAngle={Math.PI / 2.5}
             onEnd={(e) => console.log("Законечно")}
             boundaryFriction={0.1}
           />
         </Canvas>
       </div>
-      <div className={styles.navigation}>
+      <div
+        className={cx(styles.navigation, presentation.status && styles.hidden)}
+      >
         <div className={styles.actions}>
-          <button
-            className={cx(styles.button, presentation.status && styles.active)}
-            onClick={switchToPresentation}
-          >
-            Презентация
-          </button>
-          <button
-            className={cx(styles.button, !presentation.status && styles.active)}
-            onClick={switchToFree}
-          >
-            Свободный просмотр
-          </button>
+          {presentation.status ? (
+            <button className={styles.button} onClick={switchToFree}>
+              Свободный просмотр
+            </button>
+          ) : (
+            <button className={styles.button} onClick={switchToPresentation}>
+              Вернуться к презентации
+            </button>
+          )}
         </div>
 
-        <div className={styles.hint}>
+        <div className={cx(styles.hint, !presentation.status && styles.hidden)}>
           <IoArrowDown />
           <p>Scroll</p>
         </div>
       </div>
+
+      <a
+        className={styles.heycoddes}
+        target="_blank"
+        rel="noreferrer"
+        href="https://heycoddes.ru"
+      >
+        www.heycoddes.ru
+      </a>
+
       <Presentation
         setPresentation={setPresentation}
         presentation={presentation}

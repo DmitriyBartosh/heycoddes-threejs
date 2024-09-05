@@ -35,6 +35,10 @@
         align-items: flex-start;
         justify-content: flex-start;
         padding: 25px;
+        @media (max-width: $tablet) {
+            align-items: flex-end;
+            padding: 15px;
+        }
         .block {
             display: flex;
             align-items: flex-start;
@@ -45,10 +49,18 @@
             width: 100%;
             max-width: 450px;
             background-color: white;
-            border-radius: 15px;
+            border-radius: 6px;
             padding: 35px;
             padding-bottom: 45px;
             padding-right: 50px;
+            @media (max-width: $mobile) {
+                overflow: auto;
+                padding: 25px;
+                padding-bottom: 30px;
+                padding-right: 40px;
+                background-color: rgba($color: white, $alpha: 0.75);
+                backdrop-filter: blur(2px);
+            }
         }
     }
 }
@@ -58,15 +70,29 @@
     bottom: 25px;
     left: 25px;
     right: 25px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 25px;
     z-index: 6;
+    @media (max-width: $mobile) {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    &.hidden {
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
     .actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 440px;
+        gap: 15px;
     }
 }
 
@@ -76,28 +102,66 @@
     justify-content: center;
     gap: 10px;
     height: 50px;
-    background-color: #e2dfda;
     border-radius: 5px;
     padding: 10px 30px;
-    padding-right: 40px;
+    transition: all 0.3s;
+    @media (max-width: $mobile) {
+        display: none;
+    }
+    &.hidden {
+        opacity: 0;
+        transform: translateY(5px);
+    }
 }
 
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1.2;
+
     height: 50px;
+    width: 100%;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 6px;
     padding: 10px 30px;
     cursor: pointer;
     transition: all 0.3s;
+    color: #333;
+    text-decoration: none;
+    font-weight: 400;
+    @media (max-width: $mobile) {
+        font-weight: 500;
+    }
     &:hover {
         transform: scale(0.95);
     }
-    &.active {
-        background-color: $red;
-        color: white;
+}
+
+.heycoddes {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    color: #333;
+    text-decoration: none;
+    font-weight: 400;
+    gap: 2px;
+    z-index: 6;
+    cursor: pointer;
+    transition: all 0.3s;
+    @media (max-width: $mobile) {
+        right: auto;
+        top: 15px;
+        font-weight: 500;
+    }
+    span {
+        font-weight: 500;
+    }
+    &:hover {
+        transform: scale(0.95);
     }
 }

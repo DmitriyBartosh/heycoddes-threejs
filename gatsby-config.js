@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `dezinfekciya-gatsby`,
+    title: `3D Presentation / Hey, Coddes`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [

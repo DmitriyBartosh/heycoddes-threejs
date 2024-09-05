@@ -76,7 +76,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 25px;
-    z-index: 6;
+    z-index: 8;
     @media (max-width: $mobile) {
         bottom: 10px;
         left: 10px;
@@ -151,7 +151,7 @@
     text-decoration: none;
     font-weight: 400;
     gap: 2px;
-    z-index: 6;
+    z-index: 8;
     cursor: pointer;
     transition: all 0.3s;
     @media (max-width: $mobile) {

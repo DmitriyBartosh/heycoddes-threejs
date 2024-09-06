@@ -1,12 +1,14 @@
 import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
+import { useIsMobile } from "./mediaQuery";
 
 import { steps } from "./stepsVariants";
 
 import * as THREE from "three";
 
 export function Model({ presentation }) {
+  const isMobile = useIsMobile();
   const { nodes } = useGLTF("models/house.gltf");
   const [
     textureEarth,
@@ -138,7 +140,7 @@ export function Model({ presentation }) {
     <motion.group
       variants={steps[presentation.step]}
       initial={false}
-      animate="animate"
+      animate={isMobile ? "mobile" : "desktop"}
       transition={{ duration: 1, ease: [0.28, 0.41, 0.12, 1] }}
     >
       <group

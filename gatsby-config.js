@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `3D Presentation / Hey, Coddes`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://presentation-house.ru`,
   },
   plugins: [
     "gatsby-plugin-sass",

@@ -11,7 +11,6 @@ export function Model({ presentation }) {
   const isMobile = useIsMobile();
   const { nodes } = useGLTF("models/house.gltf");
   const [
-    textureEarth,
     textureFloor,
     textureWalls,
     textureDoors,
@@ -27,7 +26,6 @@ export function Model({ presentation }) {
     textureBathroom,
     textureWindows,
   ] = useTexture([
-    "textures/EarthBaked.jpg",
     "textures/FloorBaked.jpg",
     "textures/WallsBaked.jpg",
     "textures/DoorsBaked.jpg",
@@ -44,7 +42,6 @@ export function Model({ presentation }) {
     "textures/WindowsBaked.jpg",
   ]);
 
-  textureEarth.flipY = false;
   textureFloor.flipY = false;
   textureWalls.flipY = false;
   textureDoors.flipY = false;
@@ -60,7 +57,6 @@ export function Model({ presentation }) {
   textureBathroom.flipY = false;
   textureWindows.flipY = false;
 
-  textureEarth.colorSpace = "srgb";
   textureFloor.colorSpace = "srgb";
   textureWalls.colorSpace = "srgb";
   textureDoors.colorSpace = "srgb";
@@ -77,7 +73,7 @@ export function Model({ presentation }) {
   textureWindows.colorSpace = "srgb";
 
   const earthMaterial = new THREE.MeshBasicMaterial({
-    map: textureEarth,
+    color: "#ECE4DB",
   });
 
   const floorMaterial = new THREE.MeshBasicMaterial({

@@ -12,10 +12,10 @@ export const steps = [
     mobile: {
       x: 1,
       y: 0,
-      z: -0.5,
-      rotateY: 2,
-      rotateZ: 0.15,
-      rotateX: -0.9,
+      z: 0,
+      rotateY: 1.8,
+      rotateZ: 0,
+      rotateX: -0.85,
     },
   },
   {
@@ -32,7 +32,7 @@ export const steps = [
     mobile: {
       x: 4.75,
       y: 6,
-      z: 0.5,
+      z: 0,
       rotateY: 0.25,
       rotateZ: 0.15,
       rotateX: 0.15,
@@ -92,7 +92,7 @@ export const steps = [
     mobile: {
       x: -3,
       y: 5,
-      z: 2,
+      z: 1,
       rotateY: 0.15,
       rotateZ: -0.15,
       rotateX: 0,
@@ -104,7 +104,7 @@ export const steps = [
     desktop: {
       x: 2.5,
       y: 10,
-      z: 3.25,
+      z: 0,
       rotateY: 0.1,
       rotateZ: 0.15,
       rotateX: -0.1,

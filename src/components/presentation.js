@@ -36,6 +36,10 @@ function Presentation({ setPresentation, presentation }) {
     }
   }, [presentation.status]);
 
+  useEffect(() => {
+    setCurrentHeight(height);
+  }, [height]);
+
   return (
     <Swiper
       ref={sliderRef}
@@ -46,7 +50,6 @@ function Presentation({ setPresentation, presentation }) {
       setWrapperSize={true}
       mousewheel={true}
       onInit={() => setCurrentHeight(height)}
-      onResize={() => console.log("Работает")}
       height={currentHeight}
       onSlideChange={(e) => changeSlide(e.activeIndex)}
       modules={[Mousewheel]}
@@ -55,7 +58,7 @@ function Presentation({ setPresentation, presentation }) {
       {steps.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className={styles.wrap}>
+            <div className={styles.wrap} style={{ minHeight: currentHeight }}>
               <motion.div
                 animate={{
                   opacity:
@@ -63,9 +66,9 @@ function Presentation({ setPresentation, presentation }) {
                   scale:
                     presentation.step === index && index !== lastIndex
                       ? 1
-                      : 0.9,
+                      : 0.85,
                 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
                 className={styles.block}
               >
                 <h2>{item.title}</h2>

@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useProgress } from "@react-three/drei";
 
 import * as styles from "./house.module.scss";
 
-function Loading() {
+function Loading({ setLoading }) {
   const { progress } = useProgress();
+
+  useEffect(() => {
+    if (progress === 100) {
+      setLoading(false);
+    }
+  }, [progress, setLoading]);
 
   return (
     <div className={styles.loading}>

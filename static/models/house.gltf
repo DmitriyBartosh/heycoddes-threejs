@@ -11042,32 +11042,32 @@
 		},
 		{
 			"componentType":5126,
-			"count":32,
+			"count":8,
 			"max":[
-				10.669719696044922,
+				-6.049622058868408,
 				0.09000000357627869,
-				6.345694541931152
+				3.4640188217163086
 			],
 			"min":[
 				-10.919857025146484,
 				0.09000000357627869,
-				-7.553288459777832
+				-4.554076194763184
 			],
 			"type":"VEC3"
 		},
 		{
 			"componentType":5126,
-			"count":32,
+			"count":8,
 			"type":"VEC3"
 		},
 		{
 			"componentType":5126,
-			"count":32,
+			"count":8,
 			"type":"VEC2"
 		},
 		{
 			"componentType":5123,
-			"count":48,
+			"count":18,
 			"type":"SCALAR"
 		}
 	],
@@ -11784,13 +11784,13 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":385,
+			"byteLength":212,
 			"byteOffset":4598380
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":4598768,
+			"byteLength":4598592,
 			"uri":"house.bin"
 		}
 	]

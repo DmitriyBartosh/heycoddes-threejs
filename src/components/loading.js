@@ -7,7 +7,7 @@ function Loading({ setLoading }) {
   const { progress } = useProgress();
 
   useEffect(() => {
-    if (progress === 100) {
+    if (progress > 50) {
       setLoading(false);
     }
   }, [progress, setLoading]);

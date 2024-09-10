@@ -146,6 +146,8 @@
     font-weight: 400;
     @media (max-width: $mobile) {
         font-weight: 500;
+        background-color: white;
+        backdrop-filter: none;
     }
     &:hover {
         transform: scale(0.95);
